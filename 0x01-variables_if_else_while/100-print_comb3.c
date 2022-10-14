@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* main - Prints nos 1 to 10
+* main - Prints different combinations of two digit numbers
 *
 * Return: is zero
 */
@@ -14,11 +14,14 @@ int main(void)
 	{
 		for (m = 0; m < 10; m++)
 		{
-			putchar((n % 10) + '0'); 
-			putchar((m % 10) + '0');
-			putchar(',');
-			putchar(' ');
-		}	
+			if (n != m && m > n)
+			{
+				putchar((n % 10) + '0');
+				putchar((m % 10) + '0');
+				putchar(',');
+				putchar(' ');
+			}
+		}
 	}
 
 	putchar('\n');
