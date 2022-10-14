@@ -16,14 +16,11 @@ int main(void)
 		{
 			if (n != m && m > n)
 			{
-				/*if (n < 10 && m < 10)
-				{
-					putchar('0');
-				}*/
-
-				putchar((n % 100) + '0');
+				putchar((n / 10) + '0');
+				putchar((n % 10) + '0');
 				putchar(' ');
-				putchar((m % 100) + '0');
+				putchar((m / 10) + '0');
+				putchar((m % 10) + '0');
 				putchar(',');
 				putchar(' ');
 			}
