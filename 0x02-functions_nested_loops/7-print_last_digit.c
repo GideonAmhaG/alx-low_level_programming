@@ -3,7 +3,7 @@
 /**
  *print_last_digit - prints last digit
  *@n: int
- *Return: n or -n %
+ *Return: m
  */
 
 int print_last_digit(int n)
