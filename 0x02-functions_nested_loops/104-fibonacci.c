@@ -7,17 +7,19 @@
 int main(void)
 {
 	int i;
-	unsigned long a = 1;
-	unsigned long b = 0;
-	unsigned long c = 0;
+	unsigned long a = 2;
+	unsigned long b = 1;
+	unsigned long c = 2;
+	
+	printf("1, 2, ");
 
-	for (i = 1; i <= 100; i++)
+	for (i = 1; i <= 96; i++)
 	{
 		c = a + b;
 		printf("%lu", c);
 		b = a;
 		a = c;
-		if (i == 100)
+		if (i == 96)
 			continue;
 		printf(", ");
 	}
