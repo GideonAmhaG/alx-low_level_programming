@@ -14,9 +14,12 @@ int main(void)
 	for (i = 0; i <= 50; i++)
 	{
 		c = a + b;
-		printf("%ld, ", c);
+		printf("%ld", c);
 		b = a;
 		a = c;
+		if (i == 50)
+			continue;
+		printf(", ");
 	}
 
 	printf("\n");
