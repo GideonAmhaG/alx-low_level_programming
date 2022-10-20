@@ -2,7 +2,7 @@
 
 /**
  * print_square - prints a squarel
- * @n: input for how long the line will be
+ * @size: size of square
  * Return: 1 or 0
  */
 
