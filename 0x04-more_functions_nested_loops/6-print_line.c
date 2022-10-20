@@ -3,7 +3,7 @@
 /**
  * print_line - prints a line
  * @n: input for how long the line will be
- * Return: 1 or 0
+ * Return: void
  */
 
 void print_line(int n)
