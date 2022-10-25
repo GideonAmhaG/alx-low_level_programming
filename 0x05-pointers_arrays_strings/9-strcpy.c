@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * puts_half - prints half of a string
+  * _strcpy - prints half of a string
   * @dest: input string
   * @src: string to copy from
   *
@@ -14,7 +14,7 @@ char *_strcpy(char *dest, char *src)
 
 	while (src[i++])
 		j++;
-	
+
 	for (i = 0; i < j; i++)
 		dest[i] = src[i];
 
