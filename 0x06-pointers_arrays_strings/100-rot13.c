@@ -9,22 +9,16 @@
 
 char *rot13(char *s)
 {
-	int i = 0, j;
-	char a[] = {'a', 'e', 'o', 't', 'l'};
-	char b[] = {'A', 'E', 'O', 'T', 'L'};
-	char c[] = {'4', '3', '0', '7', '1'};
+	int i = 0; 
 
 	while (s[i])
 	{
-		j = 0;
-
-		while (a[j] && b[j] && c[j])
-		{
-			if (s[i] == a[j] || s[i] == b[j])
-				s[i] = c[j];
-
-			j++;
-		}
+		if ((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <=
+					'M'))
+			s[i] += 13;
+		else if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i]
+					<= 'Z'))
+			s[i] -= 13;
 
 		i++;
 	}
