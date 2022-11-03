@@ -14,7 +14,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
-  * sqrt - returns natural square root
+  * _sqrt - returns natural square root
   * @n: number to find square root for
   * @r: root to cheack
   *
