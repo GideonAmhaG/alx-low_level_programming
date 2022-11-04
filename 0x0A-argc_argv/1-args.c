@@ -1,6 +1,4 @@
-#include "main.h"
-
-void _printint(unsigned int);
+#include <stdio.h> 
 
 /**
   * main - prints number of arguments
@@ -12,19 +10,7 @@ void _printint(unsigned int);
 
 int main(int argc, char *argv[])
 {
-	_printint(argc);
-	_putchar('\n');
+	(void) argv;
+	printf("%d\n", argc);
 }
 
-/**
-  *_printint - prints and int using _putchar()
-  *@n: input int
-  */
-
-void _printint(unsigned int n)
-{
-	if (n / 10)
-		_printint(n / 10);
-
-	_putchar(n % 10 + '0');
-}
