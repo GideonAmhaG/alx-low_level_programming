@@ -11,16 +11,14 @@
 
 int main(int argc, char *argv[])
 {
-	int m, c =0;
+	int m, c = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
 	m = atoi(argv[1]);
-
 	while (m > 0)
 	{
 		c++;
@@ -30,29 +28,23 @@ int main(int argc, char *argv[])
 			m -= 25;
 			continue;
 		}
-
 		if ((m - 10) >= 0)
 		{
 			m -= 10;
 			continue;
 		}
-
 		if ((m - 5) >= 0)
 		{
 			m -= 5;
 			continue;
 		}
-
 		if ((m - 2) >= 0)
 		{
 			m -= 2;
 			continue;
 		}
-
 		m--;
 	}
-
 	printf("%d\n", c);
 	return (0);
 }
-
