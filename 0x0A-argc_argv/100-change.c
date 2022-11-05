@@ -11,20 +11,48 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc == 2)
-	{
-		if (atoi(argv[1]) < 0)
-			printf("0\n");
-		else
-		{
-			printf("%d\n", atoi(argv[1]));
-		}
-		return (0);
-	}
-	else
+	int m, c =0;
+
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	m = atoi(argv[1]);
+
+	while (m > 0)
+	{
+		c++;
+
+		if ((m - 25) >= 0)
+		{
+			m -= 25;
+			continue;
+		}
+
+		if ((m - 10) >= 0)
+		{
+			m -= 10;
+			continue;
+		}
+
+		if ((m - 5) >= 0)
+		{
+			m -= 5;
+			continue;
+		}
+
+		if ((m - 2) >= 0)
+		{
+			m -= 2;
+			continue;
+		}
+
+		m--;
+	}
+
+	printf("%d\n", c);
+	return (0);
 }
 
