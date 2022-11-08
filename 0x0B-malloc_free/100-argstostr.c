@@ -6,7 +6,7 @@
   * @ac: number of arguments
   * @av: string array of arguments
   *
-  * Return: pointer to joined strings 
+  * Return: pointer to joined strings
   */
 
 char *argstostr(int ac, char **av)
