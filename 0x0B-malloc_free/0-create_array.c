@@ -3,9 +3,10 @@
 
 /**
   * create_array - creates an array of char
-  * @size: sds
-  * @c: sfdfs
-  * Return: void
+  * @size: size of array
+  * @c: input char
+  *
+  * Return: pointer to the array
   */
 
 char *create_array(unsigned int size, char c)
