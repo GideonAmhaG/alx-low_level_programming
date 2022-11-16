@@ -4,7 +4,7 @@
 
 /*
  * File : function_pointers.h
- * Functions 
+ * Functions
  */
 
 void print_name(char *name, void (*f)(char *));
