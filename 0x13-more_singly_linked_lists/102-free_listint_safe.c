@@ -43,7 +43,7 @@ size_t free_listint_safe(listint_t **h)
 }
 
 /**
- * looped_listint_len - counts number of non looped nodes
+ * looped_listint_len2 - counts number of non looped nodes
  * @head: pointer to head node of the list
  *
  * Return: 0 if no loop, number of non looped nodes otherwise
