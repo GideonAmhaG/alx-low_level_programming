@@ -12,9 +12,12 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int n = 0, pwr = 0;
 	const char *s = b;
 
+	if (b == NULL)
+		return (0);
+
 	while (*b)
 	{
-		if ((*b != '0' && *b != '1') || b == NULL)
+		if (*b != '0' && *b != '1')
 			return (0);
 
 		b++;
