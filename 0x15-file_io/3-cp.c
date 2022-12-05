@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		if (fdo_from == -1 || fdr == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't read from	file %s\n", av[1]);
+				"Error: Can't read from file %s\n", av[1]);
 			free(buffer);
 			exit(98);
 		}
@@ -46,7 +46,6 @@ int main(int ac, char **av)
 
 		fdr = read(fdo_from, buffer, 1024);
 		fdo_to = open(av[2], O_WRONLY | O_APPEND);
-	
 	} while (fdr > 0);
 
 	free(buffer);
