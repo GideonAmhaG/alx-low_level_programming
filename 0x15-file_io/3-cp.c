@@ -26,7 +26,8 @@ int main(int ac, char **av)
 	fdr = read(fdo_from, buffer, 1024);
 	fdo_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do {
+	while (fdr > 0)
+	{
 		if (fdo_from == -1 || fdr == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -46,7 +47,7 @@ int main(int ac, char **av)
 
 		fdr = read(fdo_from, buffer, 1024);
 		fdo_to = open(av[2], O_WRONLY | O_APPEND);
-	} while (fdr > 0);
+	}
 
 	free(buffer);
 	_close(fdo_from);
