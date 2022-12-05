@@ -10,7 +10,7 @@ void _close(int fd);
  *
  * Return: 0
  */
-int main(int ac, char *av[])
+int main(int ac, char **av)
 {
 	int fdo_from, fdo_to, fdr, fdw;
 	char *buffer;
@@ -46,6 +46,7 @@ int main(int ac, char *av[])
 
 		fdr = read(fdo_from, buffer, 1024);
 		fdo_to = open(av[2], O_WRONLY | O_APPEND);
+	
 	} while (fdr > 0);
 
 	free(buffer);
