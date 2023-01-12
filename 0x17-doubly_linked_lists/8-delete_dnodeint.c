@@ -57,13 +57,13 @@ int delete_first_dnode(dlistint_t **head)
 	tmp = current;
 	if (current->next)
 	{
-		current = current->next;
-		current->prev = tmp->prev;
-		*head = current;
+		tmp = current->next;
+		tmp->prev = current->prev;
+		*head = tmp;
 	}
 	else
 		*head = NULL;
-	free(tmp);
+	free(current);
 	return (1);
 }
 
