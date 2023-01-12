@@ -17,6 +17,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (*head)
 	{
+		if (dlistint_len(*head) < index)
+			return (-1);
 		if (index == 0)
 			return (delete_first_dnode(head));
 		while (current)
@@ -58,4 +60,26 @@ int delete_first_dnode(dlistint_t **head)
 		*head = NULL;
 	free(tmp);
 	return (1);
+}
+
+
+#include "lists.h"
+
+/**
+ * dlistint_len - returns the number of elements in a linked dlistint_t list
+ * @h: pointer to head node
+ *
+ * Return: the number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	const dlistint_t *current = h;
+	int nodes = 0;
+
+	while (current)
+	{
+		current = current->next;
+		nodes++;
+	}
+	return (nodes);
 }
