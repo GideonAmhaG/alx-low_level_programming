@@ -10,34 +10,52 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current = *h, *prv, *new;
+	dlistint_t *nxt = *h, *current, *new;
 	unsigned int node = 0;
 
+	if (h == NULL)
+		return (NULL);
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+	if (dlistint_len(*h) == idx)
+		return (add_dnodeint_end(h, n));
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
 
 	new->n = n;
-
-	if (*h)
+	while (nxt)
 	{
-		while (current)
+		if (node == idx)
 		{
-			if (node == idx)
-			{
-				new->next = current;
-				new->prev = prv;
-				prv->next = new;
-				current->prev = new;
-				return (new);
-			}
-			prv = current;
-			current = current->next;
-			node++;
+			new->next = nxt;
+			new->prev = current;
+			current->next = new;
+			nxt->prev = new;
+			return (new);
 		}
+		current = nxt;
+		nxt = nxt->next;
+		node++;
 	}
-	new->next = *h;
-	new->prev = NULL;
-	*h = new;
-	return (*h);
+	return (NULL);
+}
+
+/**
+ * dlistint_len - returns the number of elements in a linked dlistint_t list
+ * @h: pointer to head node
+ *
+ * Return: the number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	const dlistint_t *current = h;
+	int nodes = 0;
+
+	while (current)
+	{
+		current = current->next;
+		nodes++;
+	}
+	return (nodes);
 }
