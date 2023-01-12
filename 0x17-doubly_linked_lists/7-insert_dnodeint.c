@@ -32,13 +32,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			new->prev = current;
 			current->next = new;
 			nxt->prev = new;
-			return (new);
 		}
 		current = nxt;
 		nxt = nxt->next;
 		node++;
 	}
-	return (NULL);
+	return (new);
 }
 
 /**
