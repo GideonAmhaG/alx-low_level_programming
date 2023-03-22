@@ -12,4 +12,4 @@ oclean:
 	${RM} ${OBJ}
 fclean: clean oclean
 re: fclean all
-.PHONY: all clean oclean fclean re
+.PHONY: clean oclean fclean re
